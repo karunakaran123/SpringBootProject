@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/jquery.min.js}"></script>
+</head>
+<body>
+<table border="1">
+<tr>
+<td>EMpId</td>
+<td th:text="${employee.empId}"></td>
+</tr>
+
+<tr>
+<td>Empname</td>
+<td th:text="${employee.empName}"></td>
+</tr>
+
+<tr>
+<td>EmpSal</td>
+<td th:text="${employee.empSal}"></td>
+</tr>
+
+<tr>
+<td>EmpAddr</td>
+<td th:text="${employee.empAddr}"></td>
+</tr>
+</table>
+</body>
+</html>

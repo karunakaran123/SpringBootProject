@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<script type="text/javascript"
+	th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/jquery.min.js}"></script>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-sm bg-warning justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 3</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+<div class="container">
+<div class="card-header bg-primary text-white col-20o">
+   <center><h2>Employee Data Page</h2></center>
+</div>
+  <div class="card-body">
+	<table class="table table-hover ">
+	  <thead>
+		<tr class="table-primary ">
+			<th>EmployeeID</th>
+			<th>EmployeeName</th>
+			<th>EmployeeSalary</th>
+			<th>EmployeeAddress</th>
+			<th colspan="3">Operations</th>
+		</tr>
+		</thead>
+		<tbody>
+	   <tr th:each="ob:${list}">
+	   	<td th:text="${ob.empId}"></td>
+	   	<td th:text="${ob.empName}"></td>
+	   	<td th:text="${ob.empSal}"></td>
+	   	<td th:text="${ob.empAddr}"></td>
+	   	<td><a th:href="@{/emp/delete/{id}(id=${ob.empId})}">
+	   	<span class="btn btn-danger">Delete</span></a></td>
+	   	<td><a th:href="@{/emp/update/{id}(id=${ob.empId})}">
+	   	<span class="btn btn-success">Update</span></a></td>
+	   	<td><a th:href="@{/emp/one/{id}(id=${ob.empId})}">
+	   	<span class="btn btn-success">View</span></a></td>
+	   </tr>
+	   </tbody>
+	</table>
+	</div>
+	<div class="card-footer ">
+	<span th:text="${msg}"></span>
+	</div>
+	</div>
+</body>
+</html>

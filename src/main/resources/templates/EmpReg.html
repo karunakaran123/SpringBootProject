@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Registration Page</title>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<script type="text/javascript"
+	th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/jquery.min.js}"></script>
+</head>
+<body >
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-white">
+				<center><h2>Employee Registration Page</h2></center>
+			</div>
+			<div class="card-body">
+				<form action="#" method="POST" th:action="@{/emp/save}"
+					th:object="${employee}" class="form">
+					<input type="hidden" th:field="*{empId}" />
+					<div class="row">
+						<div class="col-3">
+							<label for="empName" class="control-label"> EMployee Name:</label>
+						</div>
+						<div class="col-3">
+							<input type="text" th:field="*{empName}" class="form-control" />
+						</div>
+					</div>
+						<div class="row">
+							<div class="col-3">
+								<label for="empSal" class="control-label">Employee Sal :</label>
+							</div>
+							<div class="col-3">
+								<input type="text" th:field="*{empSal}" class="form-control" />
+							</div>
+						</div>
+						
+						<div class="row">
+						    <div class="col-3">
+						      <label for="empAddr" class="control-label">Employee addr:</label>
+							</div>	
+							<div class="col-3">
+								<input type="text" th:field="*{empAddr}" class="form-control" />
+							</div>
+						</div>
+						<div class="row">
+						    <div class="col-3">
+								 <input type="submit" value="Register" class="btn btn-success"/>
+							</div>
+						</div>
+				</form>
+			</div>
+			<div class="card-footer">
+		     	<span th:text="${msg}"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
